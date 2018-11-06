@@ -1,0 +1,39 @@
+{
+  "name": "@ucloud-fe/linc",
+  "version": "0.0.1",
+  "description": "代码风格检查",
+  "main": "src/linc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lixiaojun629/linc.git"
+  },
+  "keywords": [
+    "eslint",
+    "prettier",
+    "lint"
+  ],
+  "author": "lixiaojun629",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lixiaojun629/linc/issues"
+  },
+  "homepage": "https://github.com/lixiaojun629/linc#readme",
+  "bin": {
+    "linc": "./src/linc.js",
+    "format": "./src/format.js"
+  },
+  "dependencies": {
+    "pretty-quick": "^1.6.0"
+  },
+  "peerDependencies": {
+    "eslint": "^5.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.10.0",
+    "husky": "^1.0.0-rc.13",
+    "prettier": "^1.13.7"
+  }
+}
