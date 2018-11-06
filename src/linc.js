@@ -9,7 +9,7 @@ const listChangedFiles = require('./listChangedFiles');
 const ignoreMessage = 'File ignored';
 
 function runESLint() {
-    const options = { configFile: path.resolve(__dirname, '../.eslintrc.js') };
+    const options = { configFile: path.resolve(process.cwd(), './.eslintrc.js') };
     const cli = new CLIEngine(options);
     let changeFiles = [...listChangedFiles()];
     changeFiles = changeFiles.filter(item => !!item);
