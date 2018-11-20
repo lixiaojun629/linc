@@ -1,0 +1,11 @@
+
+before_script:
+  - whoami
+  - pwd
+  - node -v
+  - npm -v
+check:
+  stage: build
+  script:
+    - whoami
+    - npm run linc
