@@ -4,7 +4,8 @@
   "description": "代码风格检查",
   "main": "src/linc.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "linc": "node ./src/linc.js"
   },
   "repository": {
     "type": "git",

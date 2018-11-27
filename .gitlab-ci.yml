@@ -8,4 +8,4 @@ check:
   stage: build
   script:
     - whoami
-    - npm run linc
+    - npx linc
