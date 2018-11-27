@@ -1,4 +1,7 @@
 
+
+image:lixiaojun629/uweb-code-style:0.2
+
 before_script:
   - whoami
   - pwd
