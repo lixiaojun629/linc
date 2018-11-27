@@ -6,7 +6,7 @@ before_script:
   - npm -v
 check:
   stage: build
-  image:lixiaojun629/uweb-code-style:0.2
+  image: lixiaojun629/uweb-code-style:0.2
   script:
     - whoami
     - npx linc
