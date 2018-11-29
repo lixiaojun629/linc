@@ -13,3 +13,9 @@ npm run linc
 ```
 npm run format
 ```
+
+### 发布
+
+修改package.json中的版本号
+
+执行 npm publish
