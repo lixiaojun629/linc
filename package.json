@@ -24,7 +24,7 @@
   "homepage": "https://github.com/lixiaojun629/linc#readme",
   "bin": {
     "linc": "./src/linc.js"
-  }
+  },
   "dependencies": {
     "pretty-quick": "^1.6.0"
   },
