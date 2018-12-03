@@ -1,0 +1,9 @@
+**/node_modules
+coverage/
+newconsole/
+rsync_install/
+package.json
+package-lock.json
+Dockerfile
+*.md
+.git
