@@ -12,26 +12,30 @@ const ignoreMessage = 'File ignored';
 function runESLint() {
     let wkdir = process.cwd();
     if (process.argv.length >= 3) {
-        wkdir += "/"+process.argv[2];
+        wkdir += '/' + process.argv[2];
     }
-    const suffixArr = [".js", ".json", ""];
+    const suffixArr = ['.js', '.json', ''];
     const exsitSuffix = suffixArr.find(suffix => {
         return fs.existsSync(path.resolve(wkdir, './.eslintrc' + suffix));
     });
-    if (typeof exsitSuffix === "undefined") {
-        throw Error("eslint配置文件不存在");
+    if (typeof exsitSuffix === 'undefined') {
+        throw Error('eslint配置文件不存在');
     }
-    const options = { 
+    const options = {
         configFile: path.resolve(wkdir, './.eslintrc' + exsitSuffix),
         cwd: wkdir
     };
 
     const cli = new CLIEngine(options);
     let changeFiles = [...listChangedFiles(wkdir)];
+    console.log(changeFiles);
     changeFiles = changeFiles.filter(item => !!item);
     const report = cli.executeOnFiles(changeFiles);
     const errorFiles = report.results.filter(item => {
-        return item.messages.length > 0 && item.messages[0].message.indexOf(ignoreMessage) !== 0;
+        const msgList = item.messages.filter(msg => {
+            return msg.severity === 2 && msg.message.indexOf(ignoreMessage) !== 0;
+        });
+        return msgList.length > 0;
     });
 
     const result = {
@@ -42,13 +46,17 @@ function runESLint() {
         console.log(`总错误数：${result.errorCount}`);
         errorFiles.forEach(item => {
             console.log(`文件路径：${item.filePath}`);
-            item.messages.filter(message=>{
-                return message.severity === 2
-            }).forEach(message => {
-                console.log(
-                    `错误行号：${message.line}, Message: ${message.message} RuleId:${message.ruleId}`
-                );
-            });
+            item.messages
+                .filter(message => {
+                    return message.severity === 2;
+                })
+                .forEach(message => {
+                    console.log(
+                        `错误行号：${message.line}, Message: ${message.message} RuleId:${
+                            message.ruleId
+                        }`
+                    );
+                });
         });
         process.exit(1);
     }

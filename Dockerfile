@@ -9,4 +9,4 @@ RUN npm install -g eslint-plugin-prettier@2.6.2
 RUN npm install -g eslint-plugin-react@7.10.0
 RUN npm install -g eslint-config-prettier@2.9.0 
 RUN npm install -g eslint-config-airbnb@16.1.0 
-RUN npm install -g @ucloud-fe/linc 
+RUN npm install -g @ucloud-fe/linc@0.1.1 
