@@ -26,11 +26,17 @@ function runESLint() {
         cwd: wkdir
     };
 
-    const cli = new CLIEngine(options);
+    const eslintCLI = new CLIEngine(options);
+
     let changeFiles = [...listChangedFiles(wkdir)];
-    console.log(changeFiles);
     changeFiles = changeFiles.filter(item => !!item);
-    const report = cli.executeOnFiles(changeFiles);
+
+    const jsFiles = changeFiles.filter(file => {
+        return file.endsWith('.js') || file.endsWith('.jsx');
+    });
+
+    console.log('changed js(x) files:\n', jsFiles.join('\n'));
+    const report = eslintCLI.executeOnFiles(jsFiles);
     const errorFiles = report.results.filter(item => {
         const msgList = item.messages.filter(msg => {
             return msg.severity === 2 && msg.message.indexOf(ignoreMessage) !== 0;
