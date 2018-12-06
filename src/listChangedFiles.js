@@ -8,7 +8,6 @@ const exec = (wkdir,command, args) => {
         stdio: 'pipe',
         encoding: 'utf-8'
     };
-    console.log("wkdir",wkdir);
     return execFileSync(command, args, options);
 };
 

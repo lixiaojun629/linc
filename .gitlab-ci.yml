@@ -2,10 +2,11 @@
 before_script:
   - whoami
   - pwd
-  - node -v
-  - npm -v
+  - export PATH=$PATH:/home/gitlab-runner/.nvm/versions/node/v8.11.3/bin
 check:
   stage: build
   script:
-    - whoami
+    - node -v
+    - npm -v
+    - git merge-base HEAD master
     - npx linc
