@@ -58,7 +58,7 @@ function runESLint() {
                 })
                 .forEach(message => {
                     console.log(
-                        `错误行号：${message.line}, Message: ${message.message} RuleId:${
+                        `Line:${message.line},Column:${message.column}, Message: ${message.message} RuleId:${
                             message.ruleId
                         }`
                     );

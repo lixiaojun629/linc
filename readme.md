@@ -9,10 +9,6 @@ npm install @ucloud-fe/linc
 ```
 npm run linc
 ```
-### 检查项目中所有js文件
-```
-npm run format
-```
 
 ### 发布
 
