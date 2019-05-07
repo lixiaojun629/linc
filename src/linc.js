@@ -58,9 +58,9 @@ function runESLint() {
                 })
                 .forEach(message => {
                     console.log(
-                        `Line:${message.line},Column:${message.column}, Message: ${message.message} RuleId:${
-                            message.ruleId
-                        }`
+                        `Line:${message.line},Column:${message.column}, Message: ${
+                            message.message
+                        } RuleId:${message.ruleId}`
                     );
                 });
         });
