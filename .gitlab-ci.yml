@@ -5,6 +5,7 @@ before_script:
   - export PATH=$PATH:/home/gitlab-runner/.nvm/versions/node/v8.11.3/bin
 check:
   stage: build
+  image: lixiaojun629/uweb-code-style:0.1.2
   script:
     - node -v
     - npm -v
