@@ -1,4 +1,3 @@
-
 before_script:
   - whoami
   - pwd
@@ -13,3 +12,5 @@ check:
     - npm -v
     - git merge-base HEAD master
     - npx linc
+  tags:
+    - uaek
