@@ -1,4 +1,3 @@
-
 before_script:
   - whoami
   - pwd
@@ -10,3 +9,5 @@ check:
   script:
     - whoami
     - npx linc
+tags:
+  - uaek
