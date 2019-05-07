@@ -6,6 +6,8 @@ before_script:
 check:
   stage: build
   image: lixiaojun629/uweb-code-style:0.1.2
+  tags:
+    - uaek
   script:
     - node -v
     - npm -v
