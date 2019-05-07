@@ -9,5 +9,5 @@ check:
   script:
     - whoami
     - npx linc
-tags:
-  - uaek
+  tags:
+    - uaek
